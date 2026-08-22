@@ -1,0 +1,105 @@
+{
+  "active_profile": "Varsayılan",
+  "profiles": {
+    "Varsayılan": {
+      "portal_url": "https://avukat.uyap.gov.tr/giris",
+      "login_method": "eimza",
+      "browser": "chrome",
+      "use_existing_profile": false,
+      "chrome_profile_dir": "",
+      "chrome_profile_name": "Default",
+      "eimza_button_selectors": [
+        "//div[contains(@class,'dx-button') and contains(@class,'nav-link') and contains(normalize-space(.),'Adalet E-imza')]",
+        "//div[contains(@class,'dx-button') and contains(normalize-space(.),'Adalet E-imza')]",
+        ".dx-button.nav-link",
+        "//*[contains(normalize-space(.),'Adalet E-imza \u0130le Giri\u015f')]"
+      ],
+      "uyap_pin_input_selectors": [
+        "//input[@placeholder='Pin Kodu']",
+        "//input[contains(@placeholder,'Pin') and @type='password']",
+        "input[type='password']"
+      ],
+      "uyap_pin_submit_selectors": [
+        "//button[normalize-space(.)='Giri\u015f' or .//span[normalize-space(.)='Giri\u015f']]",
+        "//button[contains(normalize-space(.),'Giri\u015f') and not(contains(normalize-space(.),'Temizle'))]",
+        "button[type='submit']"
+      ],
+      "mobil_imza": {
+        "dropdown_selector": ".edevlet-dropdown .dx-dropdownbutton-action",
+        "menu_item_text": "Mobil \u0130mza \u0130le Giri\u015f",
+        "tc_kimlik": "",
+        "phone": "",
+        "operator": "turkcell",
+        "tc_input_selector": "#tridField",
+        "phone_input_selector": "#gsmField",
+        "submit_selector": "button[name='submitButton']"
+      },
+      "imzaco": {
+        "url": "https://imza.co/",
+        "username": "",
+        "password": "",
+        "username_selectors": [],
+        "password_selectors": [],
+        "submit_selectors": [],
+        "uyap_link_selectors": []
+      },
+      "success_url_contains": "",
+      "success_url_not_contains": "/giris",
+      "success_element_selector": "",
+      "post_login_tasks": []
+    }
+  },
+
+  "auto_type_pin": true,
+  "use_keyring_for_pin": true,
+  "debug_pin_windows": true,
+  "pin_window_titles": [
+    "Adalet E-\u0130mza",
+    "Adalet E-imza",
+    "Adalet",
+    "PIN",
+    "Parola",
+    "\u015eifre",
+    "Sifre",
+    "Password",
+    "Kart \u015eifresi",
+    "Sertifika",
+    "Ak\u0131ll\u0131 Kart",
+    "Smart Card",
+    "AKIS",
+    "AK\u0130S",
+    "SafeNet",
+    "Gemalto"
+  ],
+  "pin_field_automation_id": "",
+
+  "fallback_to_mobil": true,
+  "eimza_max_attempts": 3,
+  "card_detection": true,
+  "pkcs11_lib": "",
+
+  "auto_watch": false,
+  "watch_interval_seconds": 30,
+  "site_down_retry_seconds": 60,
+  "max_login_retries": 0,
+
+  "notifications": true,
+  "minimize_to_tray": true,
+  "setup_done": false,
+
+  "scheduled_tasks": [],
+
+  "schedule": {
+    "enabled": false,
+    "start": "09:00",
+    "end": "18:00",
+    "days": [1, 2, 3, 4, 5]
+  },
+
+  "timeouts": {
+    "page_load": 40,
+    "element_wait": 30,
+    "pin_window_wait": 60,
+    "login_complete_wait": 120
+  }
+}

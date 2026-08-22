@@ -1,0 +1,52 @@
+{
+  "_aciklama": "Giris sonrasi otomatik gorev sablonlari. Istediginizi config.json icindeki 'post_login_tasks' dizisine kopyalayin. Desteklenen action'lar: goto, click, type, wait. Selector'lar UYAP arayuzune gore degisebilir; calismazsa ilgili sayfada F12 > Inspect ile guncelleyin.",
+
+  "ornek_1_dosya_sorgu": [
+    { "action": "goto",  "url": "https://avukat.uyap.gov.tr/main/#/dosya-sorgulama" },
+    { "action": "wait",  "seconds": 2 },
+    { "action": "type",  "selector": "input[name='dosyaNo']", "text": "2025/123" },
+    { "action": "click", "selector": "button[type='submit']" },
+    { "action": "wait",  "seconds": 2 }
+  ],
+
+  "ornek_2_is_listesi_ac": [
+    { "action": "goto",  "url": "https://avukat.uyap.gov.tr/main/#/is-listesi" },
+    { "action": "wait",  "seconds": 2 }
+  ],
+
+  "ornek_3_gelen_evrak": [
+    { "action": "goto",  "url": "https://avukat.uyap.gov.tr/main/#/evrak/gelen" },
+    { "action": "wait",  "seconds": 2 }
+  ],
+
+  "ornek_4_derdest_dosyalar": [
+    { "action": "goto",  "url": "https://avukat.uyap.gov.tr/main/#/dosyalarim/derdest" },
+    { "action": "wait",  "seconds": 3 }
+  ],
+
+  "ornek_7_zamanli_gorevler": {
+    "_aciklama": "Bunu config.json icindeki 'scheduled_tasks' dizisine koyun. Izleme modu (auto_watch) acikken, belirtilen gun/saatte otomatik calisir. Gunler: 1=Pzt ... 7=Paz.",
+    "ornek": [
+      {
+        "name": "Sabah dosya sorgu ve rapor",
+        "time": "09:00",
+        "days": [1, 2, 3, 4, 5],
+        "tasks": [
+          { "action": "goto",  "url": "https://avukat.uyap.gov.tr/main/#/is-listesi" },
+          { "action": "wait",  "seconds": 3 },
+          { "action": "screenshot", "path": "C:\\raporlar\\is_listesi.png" }
+        ],
+        "export_report": true,
+        "report_path": "C:\\raporlar"
+      },
+      {
+        "name": "Aksam durum raporu",
+        "time": "18:00",
+        "days": [1, 2, 3, 4, 5],
+        "tasks": [],
+        "export_report": true,
+        "report_path": "C:\\raporlar\\aksam_rapor.csv"
+      }
+    ]
+  }
+}
